@@ -40,13 +40,13 @@ jobs:
       - name: Unduh dan pindahkan rootfs tambahan
         run: |
           echo "Mulai mengunduh rootfs tambahan..."
-          curl -LO https://github.com/sugengtd7/rootfs/releases/download/23.05.05/insomwrt-v2-23.05.5-armsr-armv8-generic-rootfs.tar.gz
+          curl -LO https://github.com/atho13/myBuild/releases/download/A905X_RootFS_24.10_20261007_1532/openwrt-allwinner-generic-rootfs.tar.gz
           
           echo "Membuat direktori rootfs jika belum ada..."
           mkdir -p ./rootfs
           
           echo "Memindahkan rootfs tambahan ke direktori rootfs..."
-          mv insomwrt-v2-23.05.5-armsr-armv8-generic-rootfs.tar.gz ./rootfs/
+          mv openwrt-allwinner-generic-rootfs.tar.gz ./rootfs/
     
       - name: Mengatur tanggal
         id: date
@@ -69,7 +69,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file_glob: true
           file: out/**/*.img.gz
-          tag: InsomWRT-v2-23.05.05-stable
+          tag: Frdmx-Wrt-24.10.8-stable
           overwrite: true
           body: |
             ##  OpenWRT Release for multiple devices
@@ -80,18 +80,18 @@ jobs:
             - pass: tidakadapassword
             
             ### Amlogic
-            s905x (HG680P, B860Hv1/v2)
-            s905x2 (HG680FJ, B860Hv5, MNC CYBORG001)
-            s905x3 
+            # s905x (HG680P, B860Hv1/v2)
+            # s905x2 (HG680FJ, B860Hv5, MNC CYBORG001)
+            # s905x3 
             s905x4 (AKARI AX810, dll)
             ### Allwinner
-            H5 (Orange Pi Zero Plus 2, Orange Pi Zero Plus, Orange Pi Prime, Orange Pi PC2)
-            H6 (Orange Pi 1 Plus, Orange Pi Lite 2, Orange Pi 3 LTS, Orange Pi 3)
+            # H5 (Orange Pi Zero Plus 2, Orange Pi Zero Plus, Orange Pi Prime, Orange Pi PC2)
+            # H6 (Orange Pi 1 Plus, Orange Pi Lite 2, Orange Pi 3 LTS, Orange Pi 3)
             H616 (Orange Pi Zero 2)
             H618 (Orange Pi Zero 3, Orange Pi Zero 2W)
             ### Rockchip
-            RK3566 (Orange Pi 3B)
-            RK3588S (Orange Pi 5)
-            RK3588 (Orange Pi 5 Plus/Max)
+            # RK3566 (Orange Pi 3B)
+            # RK3588S (Orange Pi 5)
+            # RK3588 (Orange Pi 5 Plus/Max)
         env:
           ACTIONS_STEP_DEBUG: true
