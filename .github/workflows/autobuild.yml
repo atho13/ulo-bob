@@ -40,7 +40,7 @@ jobs:
       - name: Unduh dan pindahkan rootfs tambahan
         run: |
           echo "Mulai mengunduh rootfs tambahan..."
-          curl -LO https://github.com/atho13/myBuild/releases/download/A905X_RootFS_24.10_20261007_1532/openwrt-allwinner-generic-rootfs.tar.gz
+          curl -LO https://github.com/atho13/myBuild/releases/download/A905X_RootFS_24.10_20261017_1746/openwrt-allwinner-generic-rootfs.tar.gz
           
           echo "Membuat direktori rootfs jika belum ada..."
           mkdir -p ./rootfs
